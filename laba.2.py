@@ -1,13 +1,17 @@
-oper = input('enter an action a/b:')
+oper = input('enter ur operation a/b:')
 if oper == 'a':
-    text = input('enter a text:').split()
-    a = ''
-    for i in sorted(text):
-        a = a+ "," +i
-    print(a)
-if oper == 'b':
-    text1 = input('enter a text:')
-    d = {}
-    for i in set(text1):
-        d[i] = text1.count(i)
-    print(d)
+    o = []
+    text = input('enter ur text: ')
+    for i in range(len(text)):
+        if text[i] not in o and text[i] not in " ,.": 
+            o.append(text[i])  
+            o.append(text.count(text[i])) 
+    print(o)
+
+elif oper == 'b':
+    text1 = input('enter ur text: ').split(' ')
+    p = []
+    for j in text1:
+        if len(j) >= 3 and str.lower(j) not in p:
+            p.append(str.lower(j))
+    print(sorted(p))
